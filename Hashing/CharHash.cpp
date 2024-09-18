@@ -17,3 +17,6 @@ int main(){
     }
     return 0;
 }
+//map stores in order (best,average,worst->O(log(n)))
+//unordered_map stores in order (best,average->O(1) worst->O(n))
+//For both fetching and updating the value
