@@ -7,5 +7,5 @@ int main(){
     for(int i=0;i<4;i++){
       hash[arr[i]]=hash[arr[i]]+1;
     }
-    cout<<hash[1];
+    cout<<hash[1]<<endl;
 }
