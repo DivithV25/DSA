@@ -10,7 +10,7 @@ int main()
         min = i;
         for (int j = i; j <= n-1 ; j++)
         {
-            if (arr[j] <= arr[min])
+            if (arr[j] < arr[min])
             {
                 min = j;
             }
@@ -21,3 +21,5 @@ int main()
         cout<<i<<" ";
     }
 }
+
+//Time Complexity O(n^2)
