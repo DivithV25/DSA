@@ -1,6 +1,7 @@
 class Solution {
 public:
     void solve(int curr, int n, vector<int>& result) {
+      //Base Case
         if (curr > n) {
             return;
         }
@@ -12,6 +13,8 @@ public:
             solve(newnum, n, result);
         }
     }
+
+
     vector<int> lexicalOrder(int n) {
         vector<int> result;
         for (int startNum = 1; startNum <= 9; startNum++) {
