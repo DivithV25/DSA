@@ -16,7 +16,7 @@ class Solution {
         int i=1,j=0,n=str.length();
         vector<int> strlength(n,0);
         while(i<str.length()){
-            if(str[i]==str[j]) strlength[i++]=++j;
+            if(str[i]==str[j]) strlength[i++]=++j;  //This will take you to the previous matching string length  
             else{
                 if(j>0) j=strlength[j-1];
                 else i++;
