@@ -18,7 +18,7 @@ class Solution {
            return arr[0];
        }
         int n=arr.size()/2;
-        for(int i=0;i<arr.size();i++){
+        for(int i=0;i<arr.size();i++){              //STORE FREQUENCY OF ALL THE ELEMENT IN THE HASH AND COMPARE 
             hash[arr[i]]=hash[arr[i]]+1;
         }
       for(auto &it:hash){
