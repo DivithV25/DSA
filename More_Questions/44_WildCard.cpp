@@ -31,7 +31,7 @@ public:
             return dp[i][j] = solve(s, p, i - 1, j - 1, dp);
         else if (p[j] == '*')
         {
-            return dp[i][j] = (solve(s, p, i - 1, j, dp) || solve(s, p, i, j - 1, dp));
+            return dp[i][j] = (solve(s, p, i - 1, j, dp) || solve(s, p, i, j - 1, dp));   //CONSIDERING '*' AS A EMPTY STRING OR CONSIDERING *| |  INSIDE BOX THERE IS ABOVE S CHAR  TO WHICH I IS POINTING
         }
         else
             return false;
