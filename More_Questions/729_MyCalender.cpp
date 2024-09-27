@@ -10,7 +10,8 @@ public:
     {
         for (auto &i : slot)
         {
-
+               // Check for overlap: there is no overlap if the current event ends before
+            // the existing event starts, or if it starts after the existing event ends.
             if (!(end <= i.first || start >= i.second))
             {
                 return false;
