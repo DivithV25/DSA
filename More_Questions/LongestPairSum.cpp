@@ -1,42 +1,54 @@
-class Solution
-{
-public:
-    typedef pair<int, int> P;
-    int smallestChair(vector<vector<int>> &times, int targetFriend)
-    {
-        int n = times.size();
-        int chair = 0;
-        int targetFriendArrival = times[targetFriend][0];
-        priority_queue<P, vector<P>, greater<P>>
-            occupied;                                        //{departure,chairNo}
-        priority_queue<int, vector<int>, greater<int>> free; //{chairNo}
-        sort(times.begin(), times.end());
-        for (int i = 0; i < n; i++)
-        {
-            int arrivaltime = times[i][0];
-            int departuretime = times[i][1];
-            while (!occupied.empty() && occupied.top().first <= arrivaltime)
-            {
-                free.push(occupied.top().second);
-                occupied.pop();
-            }
-            if (free.empty())
-            {
-                occupied.push({departuretime, chair});
-                if (arrivaltime == targetFriendArrival)
-                    return chair;
-                chair++;
-            }
-            else
-            {
-                if (arrivaltime == targetFriendArrival)
-                {
-                    return free.top();
-                }
-                occupied.push({departuretime, free.top()});
-                free.pop();
-            }
+//{ Driver Code Starts
+// Initial template for C++
+#include <bits/stdc++.h>
+using namespace std;
+
+
+// } Driver Code Ends
+
+class Solution {
+  public:
+    int pairsum(vector<int> &arr) {
+        // code here
+        int n=arr.size();
+       int large=INT_MIN;
+       int Slarge=INT_MIN;
+     
+       for(int i=0;i<n;i++){
+           if(arr[i]>large){
+               Slarge=large;
+               
+               large=arr[i];
+           }
+           else if(arr[i]>Slarge){
+               Slarge=arr[i];
+           }
+       }
+       return Slarge+large;
         }
-        return -1;
-    }
 };
+
+
+//{ Driver Code Starts.
+int main() {
+    int t;
+
+    cin >> t;
+    cin.ignore();
+    while (t--) {
+        vector<int> arr;
+        string input;
+        getline(cin, input);
+        stringstream ss(input);
+        int number;
+        while (ss >> number) {
+            arr.push_back(number);
+        }
+        int n = arr.size();
+        Solution ob;
+        int r = ob.pairsum(arr);
+        cout << r << endl;
+    }
+    return 0;
+}
+// } Driver Code Ends
