@@ -3,7 +3,7 @@ public:
     vector<int> smallestRange(vector<vector<int>>& nums) {
         int k=nums.size();
         priority_queue<vector<int>,vector<vector<int>>,greater<vector<int>>> pq;
-        //{element,listindex,index}
+        //{element,listindex,index} this are the elements in the priority queue
         int maxEl=INT_MIN;
         for(int i=0;i<k;i++){
             pq.push({nums[i][0],i,0});
