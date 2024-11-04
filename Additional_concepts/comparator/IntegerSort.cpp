@@ -6,7 +6,6 @@ bool mycomparator(int a, int b)
         return true;
     return false;
 }
-
 int main()
 {
     vector<int> arr = {1, 4, 3, 2, 7};
