@@ -9,10 +9,10 @@ if(ind==n)
     cout<<endl;
     return;
 }
-//take this 
+//take this index
  ds.push_back(arr[ind]);
  printF(ind+1,ds,arr,n);
-//dont take this
+//dont take this index
  ds.pop_back();
  printF(ind+1,ds,arr,n);
 }
